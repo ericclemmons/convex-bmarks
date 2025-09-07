@@ -14,4 +14,11 @@ export default defineSchema({
     text: v.string(),
     isCompleted: v.boolean(),
   }),
+
+  // https://docs.convex.dev/auth/database-auth#optional-users-table-schema-1
+  users: defineTable({
+    name: v.string(),
+    // this the Clerk ID, stored in the subject JWT field
+    externalId: v.string(),
+  }).index("byExternalId", ["externalId"]),
 });
