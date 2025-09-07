@@ -9,4 +9,9 @@ export default defineSchema({
   numbers: defineTable({
     value: v.number(),
   }),
+
+  tasks: defineTable({
+    text: v.string(),
+    isCompleted: v.boolean(),
+  }),
 });
